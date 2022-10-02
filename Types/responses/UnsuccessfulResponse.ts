@@ -1,5 +1,5 @@
 /**
- * This can be caused due to:
+ * This can be due to:
  *
  * 1. Invalid request (400)
  * 2. Unauthorized request (401)
