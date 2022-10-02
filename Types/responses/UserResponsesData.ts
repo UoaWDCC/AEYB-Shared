@@ -1,22 +1,12 @@
 import RoleModel from '../models/RoleModel';
-import UserModel from '../models/UserModel';
+import UserModel, { UnpopulatedUser } from '../models/UserModel';
 import Permission from '../utils/Permission';
 
-export interface LoginData {
+export interface LoginData extends GetUserData {
     /**
      * The JWT token that can be used to authenticate future requests.
      */
     token: string;
-
-    /**
-     * The user that was logged in.
-     */
-    user: UserModel;
-
-    /**
-     * A list of the unique permissions the logged in user has.
-     */
-    permissions: Permission[];
 }
 
 export type GetSelfData = {
@@ -33,12 +23,19 @@ export type GetSelfData = {
 
 export interface GetAllUsersData {
     /**
-     * The roles field in the UserModel isn't populated, instead the ids of the roles are returned.
+     * The number of users returned.
      */
-    users: (Omit<UserModel, 'roles'> & { roles: string[] })[];
+    results: number;
+    users: UnpopulatedUser[];
 }
 
-export type GetUserData = Omit<LoginData, 'token'>;
+export interface GetUserData {
+    /**
+     * A list of the unique permissions the logged in user has.
+     */
+    permissions: Permission[];
+    user: UserModel;
+}
 
 export interface UpdateUserData {
     /**
@@ -49,9 +46,9 @@ export interface UpdateUserData {
 
 export interface GiveRolesData {
     /**
-     * The roles field in the UserModel isn't populated, instead the ids of the roles are returned.
+     * The updated user.
      */
-    users: (Omit<UserModel, 'roles'> & { roles: string[] })[];
+    user: UnpopulatedUser;
 
     /**
      * A list of the roles that the user didn't have and so were added to the user.
@@ -61,9 +58,9 @@ export interface GiveRolesData {
 
 export interface RemoveRolesData {
     /**
-     * The roles field in the UserModel isn't populated, instead the ids of the roles are returned.
+     * The updated user.
      */
-    users: (Omit<UserModel, 'roles'> & { roles: string[] })[];
+    user: UnpopulatedUser;
 
     /**
      * A list of the roles that the user had and so were removed from the user.

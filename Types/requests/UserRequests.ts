@@ -30,7 +30,7 @@ export interface LoginRequest {
     credential: string;
 }
 
-export interface UpdateUserRequest extends Partial<Omit<UserModel, '_id'>> {}
+export interface UpdateUserRequest extends Partial<Omit<UserModel, 'id'>> {}
 
 export interface GiveRolesRequest {
     /**

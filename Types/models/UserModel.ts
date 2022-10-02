@@ -6,3 +6,8 @@ export default interface UserModel {
     profileUrl?: string;
     roles: RoleModel[];
 }
+
+/**
+ * The roles field in the UserModel isn't populated, instead the ids of the roles are returned.
+ */
+export type UnpopulatedUser = Omit<UserModel, 'roles'> & { roles: string[] };
