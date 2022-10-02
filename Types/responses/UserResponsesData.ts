@@ -32,7 +32,10 @@ export type GetSelfData = {
 };
 
 export interface GetAllUsersData {
-    users: UserModel[];
+    /**
+     * The roles field in the UserModel isn't populated, instead the ids of the roles are returned.
+     */
+    users: (Omit<UserModel, 'roles'> & { roles: string[] })[];
 }
 
 export type GetUserData = Omit<LoginData, 'token'>;
@@ -44,14 +47,24 @@ export interface UpdateUserData {
     user: UserModel;
 }
 
-export interface GiveRolesData extends UpdateUserData {
+export interface GiveRolesData {
+    /**
+     * The roles field in the UserModel isn't populated, instead the ids of the roles are returned.
+     */
+    users: (Omit<UserModel, 'roles'> & { roles: string[] })[];
+
     /**
      * A list of the roles that the user didn't have and so were added to the user.
      */
     addedRoles: RoleModel[];
 }
 
-export interface RemoveRolesData extends UpdateUserData {
+export interface RemoveRolesData {
+    /**
+     * The roles field in the UserModel isn't populated, instead the ids of the roles are returned.
+     */
+    users: (Omit<UserModel, 'roles'> & { roles: string[] })[];
+
     /**
      * A list of the roles that the user had and so were removed from the user.
      */
