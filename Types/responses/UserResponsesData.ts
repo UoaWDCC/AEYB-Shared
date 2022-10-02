@@ -46,14 +46,14 @@ export interface UpdateUserData {
 
 export interface GiveRolesData extends UpdateUserData {
     /**
-     * A list of the roles that were added to the user.
+     * A list of the roles that the user didn't have and so were added to the user.
      */
     addedRoles: RoleModel[];
 }
 
 export interface RemoveRolesData extends UpdateUserData {
     /**
-     * A list of the roles that were removed from the user.
+     * A list of the roles that the user had and so were removed from the user.
      */
     removedRoles: RoleModel[];
 }
