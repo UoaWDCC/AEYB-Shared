@@ -13,6 +13,7 @@
         "noFallthroughCasesInSwitch": true,
         "alwaysStrict": true,
         "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "lib": ["ES2015"]
     }
 }
