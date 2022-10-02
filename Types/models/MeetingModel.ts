@@ -7,7 +7,7 @@ export enum MeetingType {
 }
 
 export default interface MeetingModel {
-    _id: string;
+    id: string;
     type: MeetingType;
     creator: UserModel;
     name: string;
