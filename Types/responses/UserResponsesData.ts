@@ -1,5 +1,5 @@
 import RoleModel from '../models/RoleModel';
-import UserModel, { UnpopulatedUser } from '../models/UserModel';
+import UserModel, { PopulatedUser } from '../models/UserModel';
 import Permission from '../utils/Permission';
 
 export interface LoginData extends GetUserData {
@@ -13,7 +13,7 @@ export type GetSelfData = {
     /**
      * The currently logged in user.
      */
-    self: UserModel;
+    self: PopulatedUser;
 
     /**
      * A list of the unique permissions the logged in user has.
@@ -26,7 +26,7 @@ export interface GetAllUsersData {
      * The number of users returned.
      */
     results: number;
-    users: UnpopulatedUser[];
+    users: UserModel[];
 }
 
 export interface GetUserData {
@@ -34,7 +34,7 @@ export interface GetUserData {
      * A list of the unique permissions the logged in user has.
      */
     permissions: Permission[];
-    user: UserModel;
+    user: PopulatedUser;
 }
 
 export interface UpdateUserData {
@@ -48,7 +48,7 @@ export interface GiveRolesData {
     /**
      * The updated user.
      */
-    user: UnpopulatedUser;
+    user: UserModel;
 
     /**
      * A list of the roles that the user didn't have and so were added to the user.
@@ -60,7 +60,7 @@ export interface RemoveRolesData {
     /**
      * The updated user.
      */
-    user: UnpopulatedUser;
+    user: UserModel;
 
     /**
      * A list of the roles that the user had and so were removed from the user.
