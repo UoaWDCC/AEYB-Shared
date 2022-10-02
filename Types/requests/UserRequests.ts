@@ -1,5 +1,28 @@
 import UserModel from '../models/UserModel';
 
+/**
+ * This is an endpoint that's available during development and should **only be used
+ * for testing in Postman**.
+ *
+ * If a user with the specified id doesn't exist, then a new user will be created.
+ */
+export interface DevLoginRequest {
+    /**
+     * The id of the user you're logging in as.
+     */
+    id: string;
+
+    /**
+     * If a user is being created using this name. In this case, the name is required.
+     */
+    name?: string;
+
+    /**
+     * If a user is being created using this optional profile picture url.
+     */
+    profileUrl?: string;
+}
+
 export interface LoginRequest {
     /**
      * The id token you receive when you login with google.
