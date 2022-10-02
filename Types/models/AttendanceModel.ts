@@ -6,12 +6,12 @@ export interface InvitedModel {
      * want a meeting with an individual user and not everyone with a particular
      * role.
      */
-    users: string[];
+    userIds: string[];
 
     /**
      * The ids of the roles invited.
      */
-    roles: string[];
+    roleIds: string[];
 }
 
 export default interface AttendanceModel {
