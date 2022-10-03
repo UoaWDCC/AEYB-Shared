@@ -6,12 +6,12 @@ export default interface UserModel {
     profileUrl?: string;
 
     /**
-     * The ids of the roles this user has.
+     * The roles this user has
      */
-    roles: string[];
+    roles: RoleModel[];
 }
 
 /**
- * The roles field in the UserModel has been populated with the specific roles this user has.
+ * The roles field in the UserModel only contains the ids of the roles the user has.
  */
-export type PopulatedUser = Omit<UserModel, 'roles'> & { roles: RoleModel[] };
+export type UnpopulatedUser = Omit<UserModel, 'roles'> & { roles: string[] };
