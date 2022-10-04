@@ -1,6 +1,6 @@
-import RoleModel from './RoleModel';
+import RoleDTO from './RoleDTO';
 
-export default interface UserModel {
+export default interface UserDTO {
     id: string;
     name: string;
     profileUrl?: string;
@@ -8,10 +8,10 @@ export default interface UserModel {
     /**
      * The roles this user has
      */
-    roles: RoleModel[];
+    roles: RoleDTO[];
 }
 
 /**
  * The roles field in the UserModel only contains the ids of the roles the user has.
  */
-export type UnpopulatedUser = Omit<UserModel, 'roles'> & { roles: string[] };
+export type UnpopulatedUserDTO = Omit<UserDTO, 'roles'> & { roles: string[] };

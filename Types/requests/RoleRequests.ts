@@ -1,5 +1,5 @@
-import RoleModel from '../models/RoleModel';
+import RoleDTO from '../dtos/RoleDTO';
 
-export type AddRoleRequest = Omit<RoleModel, 'id'>;
+export type AddRoleRequest = Omit<RoleDTO, 'id'>;
 
-export type UpdateRoleRequest = Partial<Omit<RoleModel, 'id'>>;
+export type UpdateRoleRequest = Partial<Omit<RoleDTO, 'id'>>;

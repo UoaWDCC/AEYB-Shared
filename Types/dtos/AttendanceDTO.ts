@@ -1,4 +1,4 @@
-import UserModel from './UserModel';
+import UserDTO from './UserDTO';
 
 export interface InvitedModel {
     /**
@@ -14,11 +14,11 @@ export interface InvitedModel {
     roleIds: string[];
 }
 
-export default interface AttendanceModel {
+export default interface AttendanceDTO {
     /**
      * A list of the users who attended the meeting.
      */
-    attendedUsers: UserModel[];
+    attendedUsers: UserDTO[];
 
     /**
      * A mapping of the absent user's ids to the reason for their absence.

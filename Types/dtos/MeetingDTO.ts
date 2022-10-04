@@ -1,18 +1,18 @@
-import AttendanceModel from './AttendanceModel';
-import UserModel from './UserModel';
+import AttendanceDTO from './AttendanceDTO';
+import UserDTO from './UserDTO';
 
 export enum MeetingType {
     Meeting = 'meeting',
     Event = 'event',
 }
 
-export default interface MeetingModel {
+export default interface MeetingDTO {
     id: string;
     type: MeetingType;
-    creator: UserModel;
+    creator: UserDTO;
     name: string;
     time: Date;
     location: string;
-    attendance: AttendanceModel;
+    attendance: AttendanceDTO;
     description?: string;
 }

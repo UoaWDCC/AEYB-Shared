@@ -1,11 +1,11 @@
-import RoleModel from '../models/RoleModel';
+import RoleDTO from '../dtos/RoleDTO';
 
 export interface GetAllRolesData {
     /**
      * The number of roles returned.
      */
     results: number;
-    roles: RoleModel[];
+    roles: RoleDTO[];
 }
 
 export interface GetRoleData {
@@ -13,14 +13,14 @@ export interface GetRoleData {
      * The number of users with the role.
      */
     userCount: number;
-    role: RoleModel;
+    role: RoleDTO;
 }
 
 export interface AddRoleData {
     /**
      * The newly created role.
      */
-    role: RoleModel;
+    role: RoleDTO;
 }
 
 export interface DeleteRoleData {
@@ -34,5 +34,5 @@ export interface UpdateRoleData {
     /**
      * The updated role.
      */
-    role: RoleModel;
+    role: RoleDTO;
 }

@@ -1,5 +1,5 @@
-import RoleModel from '../models/RoleModel';
-import UserModel, { UnpopulatedUser } from '../models/UserModel';
+import RoleDTO from '../dtos/RoleDTO';
+import UserDTO, { UnpopulatedUserDTO } from '../dtos/UserDTO';
 import Permission from '../utils/Permission';
 
 export interface LoginData extends GetUserData {
@@ -13,7 +13,7 @@ export type GetSelfData = {
     /**
      * The currently logged in user.
      */
-    self: UserModel;
+    self: UserDTO;
 
     /**
      * A list of the unique permissions the logged in user has.
@@ -26,7 +26,7 @@ export interface GetAllUsersData {
      * The number of users returned.
      */
     results: number;
-    users: UserModel[];
+    users: UserDTO[];
 }
 
 export interface GetUserData {
@@ -34,36 +34,36 @@ export interface GetUserData {
      * A list of the unique permissions the logged in user has.
      */
     permissions: Permission[];
-    user: UserModel;
+    user: UserDTO;
 }
 
 export interface UpdateUserData {
     /**
      * The updated user.
      */
-    user: UserModel;
+    user: UserDTO;
 }
 
 export interface GiveRolesData {
     /**
      * The updated user.
      */
-    user: UserModel;
+    user: UserDTO;
 
     /**
      * A list of the roles that the user didn't have and so were added to the user.
      */
-    addedRoles: RoleModel[];
+    addedRoles: RoleDTO[];
 }
 
 export interface RemoveRolesData {
     /**
      * The updated user.
      */
-    user: UserModel;
+    user: UserDTO;
 
     /**
      * A list of the roles that the user had and so were removed from the user.
      */
-    removedRoles: RoleModel[];
+    removedRoles: RoleDTO[];
 }

@@ -1,4 +1,4 @@
-import UserModel from '../models/UserModel';
+import UserDTO from '../dtos/UserDTO';
 
 /**
  * This is an endpoint that's available during development and should **only be used
@@ -30,7 +30,7 @@ export interface LoginRequest {
     credential: string;
 }
 
-export interface UpdateUserRequest extends Partial<Omit<UserModel, 'id'>> {}
+export interface UpdateUserRequest extends Partial<Omit<UserDTO, 'id'>> {}
 
 export interface GiveRolesRequest {
     /**
