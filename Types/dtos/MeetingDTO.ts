@@ -1,5 +1,5 @@
 import AttendanceDTO from './AttendanceDTO';
-import UserDTO from './UserDTO';
+import UserDTO, { UnpopulatedUserDTO } from './UserDTO';
 
 export enum MeetingType {
     Meeting = 'meeting',
@@ -9,7 +9,7 @@ export enum MeetingType {
 export default interface MeetingDTO {
     id: string;
     type: MeetingType;
-    creator: UserDTO;
+    creator: UnpopulatedUserDTO;
     name: string;
 
     /** The time value in ms when this meeting is scheduled for. */
