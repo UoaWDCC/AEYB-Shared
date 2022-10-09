@@ -5,9 +5,7 @@ export default interface UserDTO {
     name: string;
     profileUrl?: string;
 
-    /**
-     * The roles this user has
-     */
+    /** The roles this user has */
     roles: RoleDTO[];
 }
 

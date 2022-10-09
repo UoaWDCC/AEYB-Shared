@@ -7,30 +7,22 @@ import UserDTO from '../dtos/UserDTO';
  * If a user with the specified id doesn't exist, then a new user will be created.
  */
 export interface DevLoginRequest {
-    /**
-     * The id of the user you're logging in as.
-     */
+    /** The id of the user you're logging in as. */
     id: string;
 
-    /**
-     * If a user is being created using this name. In this case, the name is required.
-     */
+    /** If a user is being created using this name. In this case, the name is required. */
     name?: string;
 
-    /**
-     * If a user is being created using this optional profile picture url.
-     */
+    /** If a user is being created using this optional profile picture url. */
     profileUrl?: string;
 }
 
 export interface LoginRequest {
-    /**
-     * The id token you receive when you login with google.
-     */
+    /** The id token you receive when you login with google. */
     credential: string;
 }
 
-export interface UpdateUserRequest extends Partial<Omit<UserDTO, 'id'>> {}
+export type UpdateUserRequest = Partial<Omit<UserDTO, 'id'>>;
 
 export interface GiveRolesRequest {
     /**

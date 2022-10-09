@@ -8,25 +8,17 @@ export interface InvitedModel {
      */
     userIds: string[];
 
-    /**
-     * The ids of the roles invited.
-     */
+    /** The ids of the roles invited. */
     roleIds: string[];
 }
 
 export default interface AttendanceDTO {
-    /**
-     * A list of the users who attended the meeting.
-     */
+    /** A list of the users who attended the meeting. */
     attendedUsers: UserDTO[];
 
-    /**
-     * A mapping of the absent user's ids to the reason for their absence.
-     */
+    /** A mapping of the absent user's ids to the reason for their absence. */
     absentUsers: Map<string, string>;
 
-    /**
-     * The roles and users invited to attend.
-     */
+    /** The roles and users invited to attend. */
     invited: InvitedModel;
 }
