@@ -18,9 +18,7 @@ export interface UnauthorizedResponse {
     status: 'tokenExpired';
     message: string;
 
-    /**
-     * The time value in ms.
-     */
+    /** The time value in ms. */
     expiredAt: number;
 }
 
