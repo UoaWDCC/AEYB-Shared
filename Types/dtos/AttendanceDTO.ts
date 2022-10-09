@@ -1,6 +1,6 @@
 import UserDTO from './UserDTO';
 
-export interface InvitedModel {
+export interface InvitedDTO {
     /**
      * The ids of the specific users invited. This is primarily for when you
      * want a meeting with an individual user and not everyone with a particular
@@ -20,5 +20,5 @@ export default interface AttendanceDTO {
     absentUsers: Map<string, string>;
 
     /** The roles and users invited to attend. */
-    invited: InvitedModel;
+    invited: InvitedDTO;
 }
