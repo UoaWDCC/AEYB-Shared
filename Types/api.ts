@@ -1,6 +1,7 @@
 import { RoleIdParam, UserIdParam } from './params';
 import { AddRoleRequest, UpdateRoleRequest } from './requests/RoleRequests';
 import { GiveRolesRequest, LoginRequest, RemoveRolesRequest, UpdateUserRequest } from './requests/UserRequests';
+import { GetAllPermissionsData } from './responses/PermissionResponsesData';
 import { AddRoleData, DeleteRoleData, GetAllRolesData, GetRoleData } from './responses/RoleResponsesData';
 import {
     LoginData,
@@ -34,4 +35,7 @@ export default interface API {
     'POST /api/roles': Endpoint<AddRoleRequest, AddRoleData>;
     'PATCH /api/roles/:roleId': Endpoint<UpdateRoleRequest, UpdateUserData, RoleIdParam>;
     'DELETE /api/roles/:roleId': Endpoint<undefined, DeleteRoleData, RoleIdParam>;
+
+    /** Permission endpoints */
+    'GET /api/permissions': Endpoint<undefined, GetAllPermissionsData>;
 }
