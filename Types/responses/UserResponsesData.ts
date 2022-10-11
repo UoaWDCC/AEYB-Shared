@@ -1,5 +1,5 @@
 import RoleDTO from '../dtos/RoleDTO';
-import UserDTO, { UnpopulatedUserDTO } from '../dtos/UserDTO';
+import UserDTO from '../dtos/UserDTO';
 import Permission from '../utils/Permission';
 
 export interface LoginData extends GetUserData {

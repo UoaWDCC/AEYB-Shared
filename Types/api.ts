@@ -24,7 +24,7 @@ export interface Endpoint<Req, Res, Params = undefined, Query = undefined> {
 }
 
 export default interface API {
-    /** User endpoints */
+    // User endpoints
     'GET /api/users/@me': Endpoint<undefined, GetSelfData>;
     'GET /api/users': Endpoint<undefined, GetAllUsersData>;
     'GET /api/users/:userId': Endpoint<undefined, GetUserData, UserIdParam>;
@@ -33,17 +33,17 @@ export default interface API {
     'PATCH /api/users/:userId': Endpoint<UpdateUserRequest, UpdateUserData, UserIdParam>;
     'DELETE /api/users/:userId/roles': Endpoint<RemoveRolesRequest, RemoveRolesData, UserIdParam>;
 
-    /** Role endpoints */
+    // Role endpoints
     'GET /api/roles': Endpoint<undefined, GetAllRolesData>;
     'GET /api/roles/:roleId': Endpoint<undefined, GetRoleData, RoleIdParam>;
     'POST /api/roles': Endpoint<AddRoleRequest, AddRoleData>;
     'PATCH /api/roles/:roleId': Endpoint<UpdateRoleRequest, UpdateUserData, RoleIdParam>;
     'DELETE /api/roles/:roleId': Endpoint<undefined, DeleteRoleData, RoleIdParam>;
 
-    /** Permission endpoints */
+    // Permission endpoints
     'GET /api/permissions': Endpoint<undefined, GetAllPermissionsData>;
 
-    /** Meeting endpoints */
+    // Meeting endpoints
     'GET /api/meetings': Endpoint<undefined, GetAllMeetingsData, undefined, GetAllMeetingsQuery>;
     'GET /api/meetings/:meetingId': Endpoint<undefined, GetAllMeetingsData, MeetingIdParam>;
     'POST /api/meetings': Endpoint<AddMeetingRequest, AddMeetingData>;
