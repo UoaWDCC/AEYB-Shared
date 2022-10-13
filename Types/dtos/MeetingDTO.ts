@@ -17,6 +17,6 @@ export default interface MeetingDTO {
     location: string;
     attendance: AttendanceDTO;
 
-    /** The description for this meeting or null if there isn't one. */
-    description: string | null;
+    /** The optional description for this meeting. */
+    description?: string;
 }
