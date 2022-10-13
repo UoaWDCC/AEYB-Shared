@@ -13,12 +13,9 @@ export interface InvitedDTO {
 }
 
 export default interface AttendanceDTO {
-    /** A list of the users who attended the meeting. */
-    attendedUsers: UserDTO[];
-
-    /** A mapping of the absent user's ids to the reason for their absence. */
-    absentUsers: Map<string, string>;
-
-    /** The roles and users invited to attend. */
-    invited: InvitedDTO;
+    canAttend: boolean;
+    didAttend?:boolean;
+    rating?: number;
+    feedback?:string;
+    reason?:string;
 }
