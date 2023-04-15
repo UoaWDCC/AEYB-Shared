@@ -15,8 +15,8 @@ export default interface MeetingDTO {
     /** The time value in ms when this meeting is scheduled for. */
     time: number;
     location: string;
-    attendance: Map<string, AttendanceDTO>;
+    attendance: AttendanceDTO;
 
-    /** The description for this meeting or null if there isn't one. */
-    description: string | null;
+    /** The optional description for this meeting. */
+    description?: string;
 }
