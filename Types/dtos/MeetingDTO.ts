@@ -1,5 +1,5 @@
 import AttendanceDTO from './AttendanceDTO';
-import UserDTO, { UnpopulatedUserDTO } from './UserDTO';
+import { UnpopulatedUserDTO } from './UserDTO';
 
 export enum MeetingType {
     Meeting = 'meeting',
